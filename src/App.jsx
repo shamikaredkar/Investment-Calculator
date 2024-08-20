@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import Header from "./components/hEADER.JSX";
 import Input from "./components/Input";
+import Results from "./components/Results";
 function App() {
   const [userInput, setUserInput] = useState({
     initialInvestment: 10000,
@@ -16,7 +17,7 @@ function App() {
         //Spreads all the property values
         ...previousInput,
         //updates only the specific property
-        [inputIdentifier]: value,
+        [inputIdentifier]: +value, //adding a + will force a conversion from a string value to a number value
       };
     });
   }
@@ -24,6 +25,7 @@ function App() {
     <>
       <Header />
       <Input userInput={userInput} onChange={handleChange} />
+      <Results userInput={userInput} />
     </>
   );
 }
