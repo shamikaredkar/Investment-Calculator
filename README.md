@@ -8,7 +8,7 @@ https://github.com/user-attachments/assets/381c16f0-c579-48a4-949d-2741dfe19227
 
 </div>
 
-## Overview SSS
+## Overview
 
 The **Investment Calculator** helps users estimate the growth of their investments over time. By inputting initial investment amounts, interest rates, and investment periods, users can calculate potential returns and visualize how their investments might grow.
 
