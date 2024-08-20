@@ -1,25 +1,6 @@
 import { React, useState } from "react";
 
-export default function Input() {
-  const [userInput, setUserInput] = useState({
-    initialInvestment: 10000,
-    annualInvestment: 1200,
-    expectedReturn: 6,
-    duration: 10,
-  });
-
-  function handleChange(inputIdentifier, value) {
-    //previousInput here is userInput -- the current state of the value
-    setUserInput((previousInput) => {
-      return {
-        //Spreads all the property values
-        ...previousInput,
-        //updates only the specific property
-        [inputIdentifier]: value,
-      };
-    });
-  }
-
+export default function Input({ onChange, userInput }) {
   return (
     <section id='user-input'>
       <div className='input-group'>
@@ -30,7 +11,7 @@ export default function Input() {
             name='initial_investment'
             value={userInput.initialInvestment}
             required
-            onChange={(e) => handleChange("initialInvestment", e.target.value)}
+            onChange={(e) => onChange("initialInvestment", e.target.value)}
           />
         </p>
         <p>
@@ -40,7 +21,7 @@ export default function Input() {
             name='annual_investment'
             value={userInput.annualInvestment}
             required
-            onChange={(e) => handleChange("annualInvestment", e.target.value)}
+            onChange={(e) => onChange("annualInvestment", e.target.value)}
           />
         </p>
       </div>
@@ -52,7 +33,7 @@ export default function Input() {
             name='expected_return'
             value={userInput.expectedReturn}
             required
-            onChange={(e) => handleChange("expectedReturn", e.target.value)}
+            onChange={(e) => onChange("expectedReturn", e.target.value)}
           />
         </p>
         <p>
@@ -62,7 +43,7 @@ export default function Input() {
             name='duration'
             required
             value={userInput.duration}
-            onChange={(e) => handleChange("duration", e.target.value)}
+            onChange={(e) => onChange("duration", e.target.value)}
           />
         </p>
       </div>
