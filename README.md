@@ -1,4 +1,4 @@
-<div align="center"><h2>Investment Calculator</h2></div>
+<div align="center"><h2>Investment Calculator - <a href="">DEMO</a></h2></div>
 
 <div align="center">
   
